@@ -104,10 +104,10 @@ public class Player {
     private String getValidTwoStepAiGuess(String [] dictionary, ArrayList<Round> history) {
 
         String[] validWords;
-        // On first guess, return ARCED
+        // On first guess, return BREAD
         if (history.size() == 0) {
             // validWords = dictionary;
-            return "RAVED";
+            return "BREAD";
         }
         // Otherwise set the valid words
         else

@@ -3,8 +3,8 @@ public class MyProgram
     public static void main(String[] args)
     {
         // randomJottos(1000);
-        allTheWords();
-        // aiJotto();
+        // allTheWords();
+        aiJotto();
         // userJotto();
     }
 
