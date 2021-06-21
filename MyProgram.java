@@ -2,14 +2,23 @@ public class MyProgram
 {
     public static void main(String[] args)
     {
-        randomJottos(1000);
-        // oneJotto();
+        randomJottos(500);
+        // aiJotto();
+        // userJotto();
+    }
+
+    /**
+     * Plays one game of Jotto.
+     */
+    private static void oneJotto() {
+        Jotto game = new Jotto();
+        game.playGame ();
     }
 
     /**
      * Plays one AI game of non-silent Jotto
      */
-    private static void oneJotto() {
+    private static void aiJotto() {
         Jotto game = new Jotto (true, false);
         game.playGame ();
     }

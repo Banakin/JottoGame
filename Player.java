@@ -116,6 +116,10 @@ public class Player {
         // First step (get the top 5 first level words)
         ArrayList<String> topWords = getTopWords(5, validWords);
         
+        // for (String word : topWords) {
+        //     System.out.println(word);
+        // }
+
         // Second step (Return the best of those words based on their second guesses)
         return getBestWord(topWords, validWords);
     }
@@ -131,10 +135,11 @@ public class Player {
         ArrayList<String> topWords = new ArrayList<String>();
         ArrayList<Double> topScores = new ArrayList<Double>();
         
-        if (dictionary.length < arrayLength)
-            arrayLength = dictionary.length;
+        int topWordLength = arrayLength;
+        if (dictionary.length < topWordLength)
+        topWordLength = dictionary.length;
             
-        for (int i = 0; i < arrayLength; i++) {
+        for (int i = 0; i < topWordLength; i++) {
             topWords.add(dictionary[i]);
             topScores.add(Double.MAX_VALUE);
             // topScores.add(getWordScore(dictionary[i], dictionary));
