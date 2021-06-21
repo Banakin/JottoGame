@@ -10,11 +10,12 @@
      * CONSTRUCTOR that takes in a String as the hidden word
      * @param word The hidden word for this game of JOTTO
      */
-    public Mastermind (String word) {
+    public Mastermind (String word, boolean showOutput) {
         hiddenWord = word;
         
         // Test print statement
-        System.out.println("Word is " + hiddenWord);
+        if (showOutput)
+            System.out.println("Word is " + hiddenWord);
     }
     
     /**

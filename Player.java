@@ -22,6 +22,7 @@ public class Player {
     public String getValidGuess (String [] dictionary, ArrayList<Round> history) {
         if (isAi)
            return getValidTwoStepAiGuess(dictionary, history);
+        //    return getValidAiGuess(dictionary, history);
         else
             return getValidUserGuess (dictionary, history);
     }
@@ -106,7 +107,7 @@ public class Player {
         // On first guess, return ARCED
         if (history.size() == 0) {
             // validWords = dictionary;
-            return "ARCED";
+            return "RAVED";
         }
         // Otherwise set the valid words
         else

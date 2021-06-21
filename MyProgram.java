@@ -2,7 +2,8 @@ public class MyProgram
 {
     public static void main(String[] args)
     {
-        randomJottos(1000);
+        // randomJottos(1000);
+        allTheWords();
         // aiJotto();
         // userJotto();
     }
@@ -21,6 +22,21 @@ public class MyProgram
     private static void aiJotto() {
         Jotto game = new Jotto (true, false);
         game.playGame ();
+    }
+
+    private static void allTheWords() {
+        String[] dictionary = Dictionary.getDictionary("JOTTOWords.txt");
+        double mean = 0.0;
+        for (String word : dictionary) {
+            System.out.print("\rTesting word: "+word);
+
+            Jotto game = new Jotto (true, true, dictionary, word);
+            game.playGame();
+            mean += game.getRoundCount();
+        }
+        mean /= dictionary.length;
+        System.out.println();
+        System.out.println("Average rounds for "+dictionary.length+" tests: "+mean);
     }
 
     /**

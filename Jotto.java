@@ -24,7 +24,7 @@ public class Jotto {
         mind = new Mastermind (dictionary);
         showOutput = true;
     }
-    
+
     /** 
      * CONSTRUCTOR for starting a game of JOTTO, using the default dictionary 
      * @param isAi Weather or not the player is a human or AI
@@ -35,6 +35,21 @@ public class Jotto {
         history = new ArrayList<Round> ();
         dictionary = Dictionary.getDictionary("JOTTOWords.txt");
         mind = new Mastermind (dictionary, !silent);
+        showOutput = !silent;
+    }
+
+    /** 
+     * CONSTRUCTOR for starting a game of JOTTO, using the default dictionary 
+     * @param isAi Weather or not the player is a human or AI
+     * @param silent Weather or not the program should run silently
+     * @param dictionary The dictionary for the game to use.
+     * @param masterWord The word for the mastermind to use.
+     */
+    public Jotto (boolean isAi, boolean silent, String[] dictionary, String masterWord) {
+        player = new Player (isAi);
+        history = new ArrayList<Round> ();
+        this.dictionary = dictionary;
+        mind = new Mastermind (masterWord, !silent);
         showOutput = !silent;
     }
     
